@@ -1,0 +1,35 @@
+.container {
+  width: 320px;
+  height: 260px;
+}
+
+.thumbnail {
+  width: 100%;
+  max-height: 150px;
+  border-radius: 15px;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.chip {
+  width: 75px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #c4c4c4;
+}
+
+.chip > span {
+  font-size: 11px;
+}
+
+.hash {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1d5af6;
+}
+
+.flex {
+  display: flex;
+}
