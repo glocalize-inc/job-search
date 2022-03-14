@@ -19,6 +19,7 @@ export default function Home({
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <meta name="google-site-verification" content="7JUNgwUxG0SHzME5B5YmDbaMxldYa43e1NPPVVaniqY" />
       </Head>
       <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
