@@ -1,8 +1,9 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 import Card from "../../components/card";
 import { getAllVideos } from "../../lib/videos";
 import { IVideos } from "../../types";
+import { getSearchWord } from "../../utils/query-string";
 
 export default function Videos({
   region,
@@ -33,8 +34,9 @@ export default function Videos({
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const allVideosData = await getAllVideos()
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const q = getSearchWord(context.query)
+  const allVideosData = await getAllVideos(q)
   return {
     props: allVideosData
   }
