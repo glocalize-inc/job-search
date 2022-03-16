@@ -1,8 +1,8 @@
 import { IVideos } from "../types"
 
 // @todo 테스트 용으로 침착맨 영상만 가져옴
-export async function getAllVideos() {
-  const response = await fetch(`${process.env.ZARCIAN_API}/youtube/info/search?q=침착맨`)
+export async function getAllVideos(q: string = '침착맨') {
+  const response = await fetch(`${process.env.ZARCIAN_API}/youtube/info/search?q=${q}`)
   const result = await response.json() as IVideos
   return result
 }
