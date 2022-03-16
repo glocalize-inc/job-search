@@ -10,14 +10,23 @@ export default function Video(props: IVideo) {
       <Head>
         <title>{props.title}</title>
         <meta name="description" content={props.description.slice(0, 60)} />
-        <meta name="keywords" content={`침착맨, 유튜브, 한글, 번역, ${props.title}`} />
+        <meta name="keywords" content={`침착맨, 유튜브, 한글, 영어, 번역, ${props.title}`} />
         <meta name="og:site_name" content="gloz" />
         <meta name="og:title" content={props.title} />
         <meta name="og:description" content={props.description.slice(0, 60)} />
         <meta name="og:url" content="https://gloz.io" />
         <meta name="og:image" content={props.thumbnail.url} />
       </Head>
-      <Card item={props} />
+      <h1>{props.title}</h1>
+      <img src={props.thumbnail.url} />
+      <div>
+        <span>한글</span>
+        <span>{'->'}</span>
+        <span>영어</span>
+      </div>
+      <div>
+        <span>#번역</span>
+      </div>
     </div>
   )
 }
