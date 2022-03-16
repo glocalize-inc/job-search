@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node ./generate-sitemap.mjs",
     "start": "next start"
   },
   "dependencies": {
@@ -17,6 +18,8 @@
   "devDependencies": {
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
+    "globby": "^13.1.1",
+    "prettier": "^2.6.0",
     "typescript": "^4.6.2"
   }
 }
