@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from "next"
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next"
 import Head from "next/head"
 import Card from "../../components/card"
 import { getAllVideos, getVideoData } from "../../lib/videos"
@@ -31,20 +31,7 @@ export default function Video(props: IVideo) {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const result = await getAllVideos() as IVideos
-  const paths = result.items.map(item => ({
-    params: {
-      id: item.videoId
-    }
-  }))
-  return {
-    paths,
-    fallback: false
-  }
-}
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const result = await getVideoData(params.id as string)
   return {
     props: result.item
